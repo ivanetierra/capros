@@ -1,0 +1,38 @@
+*{
+  box-sizing:border-box
+}
+html,
+body {
+  font-family: 'Poppins';
+  margin: 0;
+}
+
+.desktop-area{
+  height: calc(100vh - 2rem);
+  background-image: url("../assets/img/background-image-px.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
+.footer {
+  background-color: lightgray;
+  display: flex;
+  height: 2rem;
+  justify-content: space-between;
+  padding: .5rem;
+}
+.footer .footer-left{
+  display: flex;
+  font-size: 1rem;
+}
+.footer .footer-right{
+  display: flex;
+  font-size: 1rem;
+}
+
+.footer .footer-left .capros-button{
+  gap: 5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
