@@ -35,7 +35,6 @@ var phraseCarouselInterval;
             $(this).addClass('front');
         })
 
-        
 
     });
 })(jQuery, this);
@@ -46,6 +45,75 @@ function enterSite() {
     $('#loading_overlay').addClass('hidden');
 }
 /*-- End Enter Site --*/
+
+
+/*-- Validate password and enter home --*/
+function validatePassword() {
+    
+    var passwordInput = document.getElementById("password").value;
+    
+    /*
+    var hash = '$2a$12$ILctJsAgLKt9Eishtcqc0.gPiYFfxcGSS5JtCRswNoZK0H8cWHXX.';
+    var passwordInput = document.getElementById("password").value;
+    console.log(passwordInput.toString());
+
+    const encoder = new TextEncoder();
+
+    // Password validation logic
+    argon2.verify(hash, passwordInput)
+        .then((result) => {
+            console.log('Password verification result:', result);
+        });
+    */
+
+
+
+    
+    if (passwordInput === "capros") {
+      window.location.href = "home.html";
+    } else {
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.classList.add("visible");
+        shakePasswordInput();
+    }
+}
+/*-- End Validate password and enter home --*/
+
+document.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.key === "Enter" 
+    && (document.activeElement.id == "password" || document.activeElement.id=="enter-button")) {
+      validatePassword();
+    }
+  });
+
+/*-- Toggle password visibility --*/
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("password");
+    var toggleIcon = document.querySelector("#togglePassword button");
+  
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleIcon.classList.remove("fa-eye-slash");
+      toggleIcon.classList.add("fa-eye");
+    } else {
+      passwordInput.type = "password";
+      toggleIcon.classList.remove("fa-eye");
+      toggleIcon.classList.add("fa-eye-slash");
+    }
+  }
+/*-- End Toggle password visibility --*/
+
+
+function shakePasswordInput() {
+    var passwordInput = document.getElementById('password-input');
+    passwordInput.classList.add('shake-animation');
+    
+    setTimeout(function() {
+      passwordInput.classList.remove('shake-animation');
+    }, 300);
+  }
+
 
 /*-- Windows --*/
 function openWindow(windowAttr) {

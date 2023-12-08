@@ -1,14 +1,14 @@
-*{
-  box-sizing:border-box
+* {
+  box-sizing: border-box;
 }
 html,
 body {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   margin: 0;
 }
 
-.desktop-area{
-  height: calc(100vh - 2rem);
+.desktop-area {
+  height: calc(100vh - 32px);
   background-image: url("../assets/img/background-image-px.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,18 +19,18 @@ body {
   display: flex;
   height: 2rem;
   justify-content: space-between;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-.footer .footer-left{
+.footer .footer-left {
   display: flex;
   font-size: 1rem;
 }
-.footer .footer-right{
+.footer .footer-right {
   display: flex;
   font-size: 1rem;
 }
 
-.footer .footer-left .capros-button{
+.footer .footer-left .capros-button {
   gap: 5px;
   height: 100%;
   display: flex;
