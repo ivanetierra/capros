@@ -51,25 +51,10 @@ function enterSite() {
 function validatePassword() {
     
     var passwordInput = document.getElementById("password").value;
-    
-    /*
-    var hash = '$2a$12$ILctJsAgLKt9Eishtcqc0.gPiYFfxcGSS5JtCRswNoZK0H8cWHXX.';
-    var passwordInput = document.getElementById("password").value;
-    console.log(passwordInput.toString());
 
-    const encoder = new TextEncoder();
+   var hash = CryptoJS.MD5(passwordInput).toString();
 
-    // Password validation logic
-    argon2.verify(hash, passwordInput)
-        .then((result) => {
-            console.log('Password verification result:', result);
-        });
-    */
-
-
-
-    
-    if (passwordInput === "capros") {
+    if (hash === 'ed84cb612503f038fcf72d66c61f3528') {
       window.location.href = "home.html";
     } else {
         var errorMessage = document.getElementById("error-message");
