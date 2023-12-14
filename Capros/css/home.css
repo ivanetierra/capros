@@ -8,11 +8,29 @@ body {
 }
 
 .desktop-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: calc(100vh - 32px);
   background-image: url("../assets/img/background-image-px.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
+}
+
+.desktop-area .desktop-area-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  transform: scale(0.7);
+
+  max-width: 100%;
+  height: auto;
 }
 .footer {
   background-color: lightgray;
