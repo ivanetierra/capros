@@ -11,28 +11,31 @@
         var x, y;
 
         function dragElement(elmnt) {
-            let pos1 = 0,
+            if(elmnt){
+
+                let pos1 = 0,
                 pos2 = 0,
                 pos3 = 0,
                 pos4 = 0;
-
-            let dragHandle = elmnt.getElementsByClassName("drag-handle")[0];
-
-
-            if (dragHandle !== undefined) {
-                // if present, the header is where you move the DIV from:
-                dragHandle.onmousedown = dragMouseDown;
-                //dragHandle.ontouchstart = dragMouseDown;
-            } else {
-                // otherwise, move the DIV from anywhere inside the DIV:
-                elmnt.onmousedown = dragMouseDown;
-                //elmnt.ontouchstart = dragMouseDown;
-            }
-
-            function dragMouseDown(e) {
+                
+                let dragHandle = elmnt?.getElementsByClassName("drag-handle")[0];
+                
+                
+                if (dragHandle) {
+                    // if present, the header is where you move the DIV from:
+                    dragHandle.onmousedown = dragMouseDown;
+                    //dragHandle.ontouchstart = dragMouseDown;
+                } else {
+                    // otherwise, move the DIV from anywhere inside the DIV:
+                    elmnt.onmousedown = dragMouseDown;
+                    //elmnt.ontouchstart = dragMouseDown;
+                }
+            
+                
+                function dragMouseDown(e) {
                 e = e || window.event;
                 e.preventDefault();
-
+                
                 if (e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel') {
                     /*let evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
                     let touch = evt.touches[0] || evt.changedTouches[0];
@@ -90,6 +93,7 @@
                 document.ontouchmove = null;
                 // elmnt.classList.remove("draggin");
             }
+        }
         }
     });
 })(jQuery, this);
