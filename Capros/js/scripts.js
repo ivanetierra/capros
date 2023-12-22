@@ -40,26 +40,37 @@ var phraseCarouselInterval;
 })(jQuery, this);
 
 
-/*-- Enter Site --*/
-function enterSite() {
-    $('#loading_overlay').addClass('hidden');
-}
-/*-- End Enter Site --*/
-
-
 /*-- Validate password and enter home --*/
 function validatePassword() {
-    
     var passwordInput = document.getElementById("password").value;
-
-   var hash = CryptoJS.MD5(passwordInput).toString();
+    var hash = CryptoJS.MD5(passwordInput).toString();
 
     if (hash === 'ed84cb612503f038fcf72d66c61f3528') {
-      window.location.href = "home.html";
+      // Make an AJAX request to the server
+      fetch('/validate-password', {
+        method: 'POST',
+        headers: {
+          'password-hash': hash
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // If the server responds positively, navigate to home.html
+          window.location.href = "/home.html";
+        } else {
+          // Handle error
+          var errorMessage = document.getElementById("error-message");
+          errorMessage.classList.add("visible");
+          shakePasswordInput();
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     } else {
-        var errorMessage = document.getElementById("error-message");
-        errorMessage.classList.add("visible");
-        shakePasswordInput();
+      var errorMessage = document.getElementById("error-message");
+      errorMessage.classList.add("visible");
+      shakePasswordInput();
     }
 }
 /*-- End Validate password and enter home --*/
@@ -90,7 +101,7 @@ function togglePasswordVisibility() {
 /*-- End Toggle password visibility --*/
 
 
-function shakePasswordInput() {
+function    shakePasswordInput() {
     var passwordInput = document.getElementById('password-input');
     passwordInput.classList.add('shake-animation');
     
