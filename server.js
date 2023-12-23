@@ -24,10 +24,11 @@ app.use((req, res, next) => {
   if (req.session.validPassword || req.path !== '/home.html') {
     next();
   } else {
-    res.redirect('/landing.html');
+    res.redirect('/index.html');
   }
 });
 
 app.use(express.static(path.join(__dirname, 'Capros')));
 
-app.listen(3000, () => console.log('Server started on port 3000'));
+//exports.app = functions.https.onRequest(app);
+app.listen(process.env.PORT || 3000, () => console.log('Server started on port', process.env.PORT || 3000));
