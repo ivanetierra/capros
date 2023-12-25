@@ -1,6 +1,6 @@
-var phraseCarouselInterval;
-
 (function($, root, undefined) {
+
+  document.body.style.height = `${window.innerHeight}px`;
 
     $(function() {
         'use strict';
