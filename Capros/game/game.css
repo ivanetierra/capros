@@ -24,10 +24,13 @@ body {
 }
 
 .start-screen {
+  width: 70%;
   font-family: "Press Start 2P", cursive;
+  text-align: center;
   position: absolute;
+  line-height: 150%;
   font-size: 4vmin;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -64,7 +67,7 @@ body {
   display: none;
 }
 
-/* This media query will apply to screens smaller than 600px */
+
 @media (max-width: 768px) {
   .desktop-text {
     display: none;
