@@ -44,9 +44,9 @@ function checkLose() {
 
 function isCollision(rect1, rect2) {
   return (
-    (rect1.left) < rect2.right &&
-    (rect1.top) < rect2.bottom && 
-    (rect1.right) > rect2.left &&
+    (rect1.left+20) < rect2.right &&
+    (rect1.top+20) < rect2.bottom && 
+    (rect1.right-20) > rect2.left &&
     (rect1.bottom) > rect2.top
   )
 }
@@ -78,7 +78,7 @@ function handleLose() {
     document.addEventListener('click', handleStart, { once: true });
 
     startScreenElem.classList.remove("hide")
-  }, 100)
+  }, 300)
 }
 
 function setPixelToWorldScale() {

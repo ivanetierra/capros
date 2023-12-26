@@ -36,7 +36,7 @@ export function getDinoRect() {
 }
 
 export function setDinoLose() {
-  dinoElem.src = "imgs/alien-jump.png"
+  dinoElem.src = "imgs/alien-dead.png"
 }
 
 function handleRun(delta, speedScale) {
