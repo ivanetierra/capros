@@ -43,12 +43,16 @@ function checkLose() {
 }
 
 function isCollision(rect1, rect2) {
+  const bufferPercent = 0.2; // 20% buffer
+  const bufferX = rect1.width * bufferPercent;
+  const bufferY = rect1.height * bufferPercent;
+
   return (
-    (rect1.left+20) < rect2.right &&
-    (rect1.top+20) < rect2.bottom && 
-    (rect1.right-20) > rect2.left &&
-    (rect1.bottom) > rect2.top
-  )
+    (rect1.left + bufferX) < rect2.right &&
+    (rect1.top + bufferY) < rect2.bottom && 
+    (rect1.right - bufferX) > rect2.left &&
+    rect1.bottom > rect2.top
+  );
 }
 
 function updateSpeedScale(delta) {
