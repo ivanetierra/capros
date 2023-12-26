@@ -3,7 +3,7 @@ import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js"
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
 const WORLD_WIDTH = 100
-const WORLD_HEIGHT = 30
+const WORLD_HEIGHT = 35
 const SPEED_SCALE_INCREASE = 0.00001
 
 const worldElem = document.querySelector("[data-world]")
@@ -43,12 +43,11 @@ function checkLose() {
 }
 
 function isCollision(rect1, rect2) {
-  console.log(rect1.right, rect2.left)
   return (
-    (rect1.left +10) < rect2.right &&
+    (rect1.left) < rect2.right &&
     (rect1.top) < rect2.bottom && 
-    (rect1.right-30) > rect2.left &&
-    rect1.bottom > rect2.top
+    (rect1.right) > rect2.left &&
+    (rect1.bottom) > rect2.top
   )
 }
 

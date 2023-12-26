@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 32px);
+  height: 100vh;
   background-image: url("../assets/img/background-image-px.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,25 +32,4 @@ img {
   max-width: 100%;
   height: auto;
 }
-.footer {
-  background-color: lightgray;
-  display: flex;
-  height: 2rem;
-  justify-content: space-between;
-  padding: 0.5rem;
-}
-.footer .footer-left {
-  display: flex;
-  font-size: 1rem;
-}
-.footer .footer-right {
-  display: flex;
-  font-size: 1rem;
-}
 
-.footer .footer-left .capros-button {
-  gap: 5px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
