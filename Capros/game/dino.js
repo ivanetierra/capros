@@ -36,21 +36,24 @@ export function getDinoRect() {
 }
 
 export function setDinoLose() {
+  dinoElem.classList.remove('running');
   dinoElem.src = "imgs/alien-dead.png"
 }
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    dinoElem.src = `imgs/alien-jump.png`
-    return
+    dinoElem.style.backgroundImage = 'url(imgs/alien-jump.png)';
+    dinoElem.style.backgroundSize = '100%';
+    dinoElem.style.width = '8.4%';
+    dinoElem.classList.remove('running');
+    return;
   }
 
-  if (currentFrameTime >= FRAME_TIME) {
-    dinoFrame = (dinoFrame + 1) % DINO_FRAME_COUNT
-    dinoElem.src = `imgs/alien-run-${dinoFrame}.png`
-    currentFrameTime -= FRAME_TIME
-  }
-  currentFrameTime += delta * speedScale
+  dinoElem.style.backgroundImage = 'url(imgs/css_sprites.png)';
+  dinoElem.style.backgroundSize = '200%'; 
+  dinoElem.style.width = '7.5%';
+  dinoElem.classList.add('running');
+  currentFrameTime += delta * speedScale;
 }
 
 function handleJump(delta) {
