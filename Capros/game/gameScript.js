@@ -1,6 +1,8 @@
 import { updateGround, setupGround } from "./ground.js"
 import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js"
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
+import { updateBackground, setupBackground } from "./background.js"
+
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 35
@@ -26,6 +28,7 @@ function update(time) {
   }
   const delta = time - lastTime
 
+  updateBackground(delta, speedScale)
   updateGround(delta, speedScale)
   updateDino(delta, speedScale)
   updateCactus(delta, speedScale)
@@ -68,6 +71,7 @@ function handleStart() {
   lastTime = null
   speedScale = 1
   score = 0
+  setupBackground()
   setupGround()
   setupDino()
   setupCactus()
