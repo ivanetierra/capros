@@ -37,7 +37,9 @@ export function getDinoRect() {
 
 export function setDinoLose() {
   dinoElem.classList.remove('running');
-  dinoElem.src = "imgs/alien-dead.png"
+  dinoElem.style.backgroundImage = 'url(imgs/alien-dead.png)';
+  dinoElem.style.backgroundSize = '100%';
+    dinoElem.style.width = '8.4%';
 }
 
 function handleRun(delta, speedScale) {
