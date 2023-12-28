@@ -62,15 +62,16 @@ function updateSpeedScale(delta) {
   speedScale += delta * SPEED_SCALE_INCREASE
 }
 
+
 function updateScore(delta) {
-  score += delta * 0.01
+  score -= delta * 0.01
   scoreElem.textContent = Math.floor(score)
 }
 
 function handleStart() {
   lastTime = null
   speedScale = 1
-  score = 0
+  score = 1000
   setupBackground()
   setupGround()
   setupDino()
