@@ -26,7 +26,13 @@ export function updateCactus(delta, speedScale) {
   })
 
   if (nextCactusTime <= 0) {
-    createCactus()
+    if(randomNumberBetween(1,3)==1){
+      createCactus()
+    }else if(randomNumberBetween(1,3)==2){
+      createPlumber()
+    }else{
+      createSagrada()
+    }
     nextCactusTime =
       randomNumberBetween(CACTUS_INTERVAL_MIN, CACTUS_INTERVAL_MAX) / speedScale
   }
@@ -48,6 +54,26 @@ function createCactus() {
   worldElem.append(cactus)
 }
 
+function createSagrada() {
+  const cactus = document.createElement("img")
+  cactus.dataset.cactus = true
+  cactus.src = "imgs/sagrada.png"
+  cactus.classList.add("cactus")
+  setCustomProperty(cactus, "--left", 100)
+  worldElem.append(cactus)
+
+}
+function createPlumber() {
+  const cactus = document.createElement("img")
+  cactus.dataset.cactus = true
+  cactus.src = "imgs/plumber-modified.png"
+  cactus.classList.add("plumber")
+  setCustomProperty(cactus, "--left", 100)
+  worldElem.append(cactus)
+}
+
 function randomNumberBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+
