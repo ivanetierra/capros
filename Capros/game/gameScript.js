@@ -1,5 +1,5 @@
 import { updateGround, setupGround } from "./ground.js"
-import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js"
+import { updateDino, setupDino, getDinoRect, setDinoLose, setDinoWin } from "./dino.js"
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 import { updateBackground, setupBackground } from "./background.js"
 
@@ -11,6 +11,8 @@ const SPEED_SCALE_INCREASE = 0.00001
 const worldElem = document.querySelector("[data-world]")
 const scoreElem = document.querySelector("[data-score]")
 const startScreenElem = document.querySelector("[data-start-screen]")
+const winScreenElem = document.querySelector("[data-win-screen]")
+const infoBoxElem = document.querySelector("[data-info-box]")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -20,7 +22,11 @@ document.addEventListener('click', handleStart, { once: true });
 let lastTime
 let speedScale
 let score
+let gameRunning = true;
+
 function update(time) {
+  if (!gameRunning) return;
+
   if (lastTime == null) {
     lastTime = time
     window.requestAnimationFrame(update)
@@ -65,18 +71,27 @@ function updateSpeedScale(delta) {
 
 function updateScore(delta) {
   score -= delta * 0.01
-  scoreElem.textContent = Math.floor(score)
+  score = Math.max(score, 0); // ensure score doesn't go below 0
+  infoBoxElem.textContent = `Meta en: ${Math.floor(score)}m`
+
+  if (score === 0) {
+    // the player has won the game
+    handleWin();
+  }
 }
 
 function handleStart() {
+  gameRunning = true;
+
   lastTime = null
   speedScale = 1
-  score = 1000
+  score = 500
   setupBackground()
   setupGround()
   setupDino()
   setupCactus()
   startScreenElem.classList.add("hide")
+  infoBoxElem.classList.remove("hide")
   window.requestAnimationFrame(update)
 }
 
@@ -85,9 +100,18 @@ function handleLose() {
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
     document.addEventListener('click', handleStart, { once: true });
-
+    infoBoxElem.classList.add("hide")
     startScreenElem.classList.remove("hide")
   }, 300)
+}
+
+function handleWin() {
+  gameRunning = false;
+  setDinoWin()
+  infoBoxElem.classList.add("hide")
+  winScreenElem.classList.remove("hide")
+
+  //alert('You won the game!');
 }
 
 function setPixelToWorldScale() {

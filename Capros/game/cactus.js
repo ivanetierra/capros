@@ -26,16 +26,19 @@ export function updateCactus(delta, speedScale) {
   })
 
   if (nextCactusTime <= 0) {
-    if(randomNumberBetween(1,4)==1){
-      createCactus()
-    }else if(randomNumberBetween(1,4)==2){
-      createSkater()
-    }else if(randomNumberBetween(1,4)==3){
-      createPlumber()
-    }else if(randomNumberBetween(1,4)==3){
-      createPidgeon()
-    }else{
-      createSagrada()
+    const randomNumber = randomNumberBetween(1,6);
+    if(randomNumber == 1){
+      createTaxi();
+    } else if(randomNumber == 2){
+      createSkater();
+    } else if(randomNumber == 3){
+      createPlumber();
+    } else if(randomNumber == 4){
+      createPidgeon();
+    } else if(randomNumber == 5){
+      createCactus();
+    } else {
+      createSagrada();
     }
     nextCactusTime =
       randomNumberBetween(CACTUS_INTERVAL_MIN, CACTUS_INTERVAL_MAX) / speedScale
@@ -88,6 +91,14 @@ function createPidgeon() {
   cactus.dataset.cactus = true
   cactus.src = "imgs/pidgeon.png"
   cactus.classList.add("pidgeon")
+  setCustomProperty(cactus, "--left", 100)
+  worldElem.append(cactus)
+}
+function createTaxi() {
+  const cactus = document.createElement("img")
+  cactus.dataset.cactus = true
+  cactus.src = "imgs/taxi.png"
+  cactus.classList.add("taxi")
   setCustomProperty(cactus, "--left", 100)
   worldElem.append(cactus)
 }

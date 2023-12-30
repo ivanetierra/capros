@@ -34,13 +34,6 @@ body {
   left: calc(var(--left) * 1%)
 }
 
-.score {
-  position: absolute;
-  font-size: 3vmin;
-  right: 1vmin;
-  top: 1vmin;
-}
-
 .start-screen {
   width: 70%;
   font-family: "Press Start 2P", cursive;
@@ -59,7 +52,26 @@ body {
   border: 2px solid #ffcc00; 
   box-shadow: 0 0 10px #ffcc00; 
 }
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+.info-box {
+  width: 50%; 
+  font-family: 'VT323', monospace;
+  text-align: center;
+  position: absolute;
+  line-height: 120%;
+  font-size: 4vmin; 
+  top: 20%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #ffcc00; 
+  padding: 5px; 
+  display: inline-block; 
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border: 2px solid #ffcc00; 
+  box-shadow: 0 0 10px #ffcc00; 
+}
 .hide {
   display: none;
 }
@@ -134,6 +146,14 @@ body {
   position: absolute;
   left: calc(var(--left) * 1%);
   height: 18%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+}
+
+.taxi {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 22%;
   bottom: 0;
   margin-bottom: 1.3%;
 }

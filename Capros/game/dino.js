@@ -42,6 +42,13 @@ export function setDinoLose() {
     dinoElem.style.width = '8.4%';
 }
 
+export function setDinoWin() {
+  dinoElem.classList.remove('running');
+  dinoElem.style.backgroundImage = 'url(imgs/alien-jump.png)';
+  dinoElem.style.backgroundSize = '100%';
+    dinoElem.style.width = '8.4%';
+}
+
 function handleRun(delta, speedScale) {
   if (isJumping) {
     dinoElem.style.backgroundImage = 'url(imgs/alien-jump.png)';

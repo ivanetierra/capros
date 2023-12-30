@@ -8,9 +8,14 @@
   <link rel="stylesheet" href="game.css">
 
   <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-    />
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+  />
 
 
   <script src="gameScript.js" type="module"></script>
@@ -30,10 +35,15 @@
 
   <div class="main">
     <div class="world" data-world>
-      <div class="score" data-score>1000</div>
       <div class="start-screen" data-start-screen>
         <span class="desktop-text">Presiona Barra Espaciadora para empezar</span>
         <span class="mobile-text">Toca la pantalla para empezar</span>
+
+      </div>
+      <div class="info-box hide" data-info-box>Meta en: 500m</div>
+      <div class="win-screen hide" data-win-screen>
+        <span>Has ganado</span>
+
       </div>
       <img src="imgs/background.jpg" class="background" data-background>
       <img src="imgs/background.jpg" class="background" data-background>
