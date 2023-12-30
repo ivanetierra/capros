@@ -83,6 +83,10 @@ body {
   background-image: url('imgs/alien-jump.png');
   background-position: 0 0;
   background-size: 100%;
+  filter: drop-shadow(1px 0 0 black) 
+        drop-shadow(0 1px 0 black)
+        drop-shadow(-1px 0 0 black) 
+        drop-shadow(0 -1px 0 black);
 }
 
 
@@ -97,17 +101,58 @@ body {
 .cactus {
   position: absolute;
   left: calc(var(--left) * 1%);
+  height: 32%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+  filter: drop-shadow(1px 0 0 black) 
+        drop-shadow(0 1px 0 black)
+        drop-shadow(-1px 0 0 black) 
+        drop-shadow(0 -1px 0 black);
+  
+}
+
+.sagrada {
+  position: absolute;
+  left: calc(var(--left) * 1%);
   height: 35%;
   bottom: 0;
   margin-bottom: 1.3%;
+  filter: drop-shadow(2px 0 0 black) 
+        drop-shadow(0 2px 0 black)
+        drop-shadow(-2px 0 0 black) 
+        drop-shadow(0 -2px 0 black);
 }
 
 .plumber {
   position: absolute;
   left: calc(var(--left) * 1%);
-  height: 25%;
+  height: 20%;
   bottom: 0;
   margin-bottom: 0;
+  filter: drop-shadow(2px 0 0 black) 
+        drop-shadow(0 2px 0 black)
+        drop-shadow(-2px 0 0 black) 
+        drop-shadow(0 -2px 0 black);
+}
+
+.skater {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 25%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+}
+
+.pidgeon {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 18%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+  filter: drop-shadow(3px 0 0 black) 
+        drop-shadow(0 3px 0 black)
+        drop-shadow(-3px 0 0 black) 
+        drop-shadow(0 -3px 0 black);
 }
 
 .mobile-text {

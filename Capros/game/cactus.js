@@ -26,10 +26,14 @@ export function updateCactus(delta, speedScale) {
   })
 
   if (nextCactusTime <= 0) {
-    if(randomNumberBetween(1,3)==1){
+    if(randomNumberBetween(1,4)==1){
       createCactus()
-    }else if(randomNumberBetween(1,3)==2){
+    }else if(randomNumberBetween(1,4)==2){
+      createSkater()
+    }else if(randomNumberBetween(1,4)==3){
       createPlumber()
+    }else if(randomNumberBetween(1,4)==3){
+      createPidgeon()
     }else{
       createSagrada()
     }
@@ -58,7 +62,7 @@ function createSagrada() {
   const cactus = document.createElement("img")
   cactus.dataset.cactus = true
   cactus.src = "imgs/sagrada.png"
-  cactus.classList.add("cactus")
+  cactus.classList.add("sagrada")
   setCustomProperty(cactus, "--left", 100)
   worldElem.append(cactus)
 
@@ -68,6 +72,22 @@ function createPlumber() {
   cactus.dataset.cactus = true
   cactus.src = "imgs/plumber-modified.png"
   cactus.classList.add("plumber")
+  setCustomProperty(cactus, "--left", 100)
+  worldElem.append(cactus)
+}
+function createSkater() {
+  const cactus = document.createElement("img")
+  cactus.dataset.cactus = true
+  cactus.src = "imgs/skater.png"
+  cactus.classList.add("skater")
+  setCustomProperty(cactus, "--left", 100)
+  worldElem.append(cactus)
+}
+function createPidgeon() {
+  const cactus = document.createElement("img")
+  cactus.dataset.cactus = true
+  cactus.src = "imgs/pidgeon.png"
+  cactus.classList.add("pidgeon")
   setCustomProperty(cactus, "--left", 100)
   worldElem.append(cactus)
 }
