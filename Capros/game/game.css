@@ -83,10 +83,10 @@ body {
   background-image: url('imgs/alien-jump.png');
   background-position: 0 0;
   background-size: 100%;
-  filter: drop-shadow(1px 0 0 black) 
-        drop-shadow(0 1px 0 black)
-        drop-shadow(-1px 0 0 black) 
-        drop-shadow(0 -1px 0 black);
+  filter: drop-shadow(10% 0 0 black) 
+        drop-shadow(0 10% 0 black)
+        drop-shadow(-10% 0 0 black) 
+        drop-shadow(0 -10% 0 black);
 }
 
 
@@ -104,11 +104,6 @@ body {
   height: 32%;
   bottom: 0;
   margin-bottom: 1.3%;
-  filter: drop-shadow(1px 0 0 black) 
-        drop-shadow(0 1px 0 black)
-        drop-shadow(-1px 0 0 black) 
-        drop-shadow(0 -1px 0 black);
-  
 }
 
 .sagrada {
@@ -117,10 +112,6 @@ body {
   height: 35%;
   bottom: 0;
   margin-bottom: 1.3%;
-  filter: drop-shadow(2px 0 0 black) 
-        drop-shadow(0 2px 0 black)
-        drop-shadow(-2px 0 0 black) 
-        drop-shadow(0 -2px 0 black);
 }
 
 .plumber {
@@ -129,10 +120,6 @@ body {
   height: 20%;
   bottom: 0;
   margin-bottom: 0;
-  filter: drop-shadow(2px 0 0 black) 
-        drop-shadow(0 2px 0 black)
-        drop-shadow(-2px 0 0 black) 
-        drop-shadow(0 -2px 0 black);
 }
 
 .skater {
@@ -149,10 +136,6 @@ body {
   height: 18%;
   bottom: 0;
   margin-bottom: 1.3%;
-  filter: drop-shadow(3px 0 0 black) 
-        drop-shadow(0 3px 0 black)
-        drop-shadow(-3px 0 0 black) 
-        drop-shadow(0 -3px 0 black);
 }
 
 .mobile-text {

@@ -16,6 +16,18 @@
   <script src="gameScript.js" type="module"></script>
 </head>
 <body>
+  <svg style="height: 0; width: 0; position: absolute;">
+    <filter id="responsive-stroke">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2%" result="expanded"/>
+      <feFlood flood-color="black" flood-opacity="1" result="color"/>
+      <feComposite in="color" in2="expanded" operator="in" result="stroke"/>
+      <feMerge>
+        <feMergeNode in="stroke"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </svg>
+
   <div class="main">
     <div class="world" data-world>
       <div class="score" data-score>1000</div>
