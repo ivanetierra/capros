@@ -13,7 +13,7 @@ const startScreenElem = document.querySelector("[data-start-screen]")
 const winScreenElem = document.querySelector("[data-win-screen]")
 const infoBoxElem = document.querySelector("[data-info-box]")
 const winBox = document.getElementById('win-box');
-const backButton = document.getElementById('back-button');
+const backButton = document.getElementById('go-back');
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)

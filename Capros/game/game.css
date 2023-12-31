@@ -241,6 +241,19 @@ body {
   100% { transform: scale(1.1); }
 }
 
-.go-back{
-  z-index: +2;
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
 }
+
+.go-back{
+  padding: 0.5%;
+  width: 15vmin; 
+  font-family: 'VT323', monospace;
+  text-align: center;
+  font-size: 5vmin; 
+}
+
