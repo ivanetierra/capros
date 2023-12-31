@@ -28,14 +28,14 @@ export function updateCactus(delta, speedScale, score) {
     }
    
   })
-  if (score <= 22 && !primaveraCreated) {
+  if (score <= 15 && !primaveraCreated) {
     // Create new obstacle
     createPrimavera();
     primaveraCreated = true;
 
   }
 
-  if (nextCactusTime <= 0 && score>50) {
+  if (nextCactusTime <= 0 && score>35) {
     const randomNumber = randomNumberBetween(1,6);
     if(randomNumber == 1){
       createTaxi();

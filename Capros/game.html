@@ -21,19 +21,11 @@
   <script src="game/gameScript.js" type="module"></script>
 </head>
 <body>
-  <svg style="height: 0; width: 0; position: absolute;">
-    <filter id="responsive-stroke">
-      <feMorphology in="SourceAlpha" operator="dilate" radius="2%" result="expanded"/>
-      <feFlood flood-color="black" flood-opacity="1" result="color"/>
-      <feComposite in="color" in2="expanded" operator="in" result="stroke"/>
-      <feMerge>
-        <feMergeNode in="stroke"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </svg>
 
   <div class="main">
+    <div class="game-instructions">
+      <p>Lleva al Capro-alien al Primavera</p>
+    </div>
     <div class="world" data-world>
       <div class="start-screen" data-start-screen>
         <span class="desktop-text">Presiona Barra Espaciadora para empezar</span>
@@ -46,7 +38,6 @@
         <div class="win-box " id="win-box">
           <span>Contraseña: sorpac</span>
         </div>
-        <button id="back-button" >Go Back</button> 
       </div>
       <img src="game/imgs/background.jpg" class="background" data-background>
       <img src="game/imgs/background.jpg" class="background" data-background>
@@ -54,6 +45,12 @@
       <img src="game/imgs/ground.jpg" class="ground" data-ground>
       <div class="dino" data-dino></div>
     </div>
+    
+    <div class="game-instructions">
+      <p>Para conseguir la contraseña.</p>
+    </div>
+    <!-- <button class="go-back">go back</button> -->
+    
   </div>
 </body>
 </html>

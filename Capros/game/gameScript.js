@@ -9,7 +9,6 @@ const WORLD_HEIGHT = 35
 const SPEED_SCALE_INCREASE = 0.00001
 
 const worldElem = document.querySelector("[data-world]")
-const scoreElem = document.querySelector("[data-score]")
 const startScreenElem = document.querySelector("[data-start-screen]")
 const winScreenElem = document.querySelector("[data-win-screen]")
 const infoBoxElem = document.querySelector("[data-info-box]")
@@ -24,7 +23,17 @@ document.addEventListener('click', handleStart, { once: true });
 let lastTime
 let speedScale
 let score
-let gameRunning = true;
+let gameRunning = false;
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    gameRunning = false;
+  } else {
+    gameRunning = true;
+    lastTime = null
+    window.requestAnimationFrame(update);
+  }
+});
 
 function update(time) {
   if (!gameRunning) return;
@@ -87,7 +96,7 @@ function handleStart() {
 
   lastTime = null
   speedScale = 1
-  score = 50
+  score = 500
   setupBackground()
   setupGround()
   setupDino()
