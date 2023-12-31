@@ -199,6 +199,12 @@ body {
   font-size: 2vw; /* Use vw units for responsiveness */
  
   margin: 0 auto; /* Center the box */
+  opacity: 0; /* Start with the box hidden */
+  transition: opacity 4s ease-in-out; /* Add this line */
+}
+
+.win-box.show {
+  opacity: 1; /* Show the box when the 'show' class is added */
 }
 
 @keyframes winBox {

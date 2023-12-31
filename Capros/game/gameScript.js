@@ -87,7 +87,7 @@ function handleStart() {
 
   lastTime = null
   speedScale = 1
-  score = 500
+  score = 50
   setupBackground()
   setupGround()
   setupDino()
@@ -113,7 +113,8 @@ function handleWin() {
   infoBoxElem.classList.add("hide")
   winScreenElem.classList.remove("hide")
   setTimeout(() => {
-    winBox.classList.remove('hide');
+    
+    winBox.classList.add('show'); // Add the 'show' class
   }, 500); // 500ms delay
 
   //alert('You won the game!');
