@@ -52,7 +52,7 @@ body {
   border: 2px solid #ffcc00; 
   box-shadow: 0 0 10px #ffcc00; 
 }
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 
 .info-box {
   width: 50%; 
@@ -92,13 +92,9 @@ body {
   width: 8%;
   bottom: calc(var(--bottom) * 1%);
   margin-bottom: 1.3%;
-  background-image: url('imgs/alien-jump.png');
+  background-image: url('game/imgs/alien-jump.png');
   background-position: 0 0;
   background-size: 100%;
-  filter: drop-shadow(10% 0 0 black) 
-        drop-shadow(0 10% 0 black)
-        drop-shadow(-10% 0 0 black) 
-        drop-shadow(0 -10% 0 black);
 }
 
 
@@ -158,6 +154,14 @@ body {
   margin-bottom: 1.3%;
 }
 
+.primavera {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 40%;
+  top: 10%;
+  background-image: url('game/imgs/primavera.gif');
+}
+
 .mobile-text {
   display: none;
 }
@@ -170,4 +174,52 @@ body {
   .mobile-text {
     display: inline;
   }
+}
+
+.win-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.win-box {
+  text-align: center;
+  padding: 1vw; /* Use vw units for responsiveness */
+  background: #ffff00;
+  border: 1vw solid #000; /* Use vw units for responsiveness */
+  animation: winBox 1s infinite alternate;
+  position: relative;
+  top: 20%; /* Use vh units for responsiveness */
+  font-size: 2vw; /* Use vw units for responsiveness */
+ 
+  margin: 0 auto; /* Center the box */
+}
+
+@keyframes winBox {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+#back-button {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  padding: 1vw;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5vw;
+  transition: background 0.3s;
+}
+
+#back-button:hover {
+  background: #fff;
+  color: #000;
 }

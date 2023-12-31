@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="game/game.css">
 
   <link
     rel="stylesheet"
@@ -18,7 +18,7 @@
   />
 
 
-  <script src="gameScript.js" type="module"></script>
+  <script src="game/gameScript.js" type="module"></script>
 </head>
 <body>
   <svg style="height: 0; width: 0; position: absolute;">
@@ -41,14 +41,17 @@
 
       </div>
       <div class="info-box hide" data-info-box>Meta en: 500m</div>
+      
       <div class="win-screen hide" data-win-screen>
-        <span>Has ganado</span>
-
+        <div class="win-box hide" id="win-box">
+          <span>Contraseña: sorpac</span>
+        </div>
+        <button id="back-button" >Go Back</button> 
       </div>
-      <img src="imgs/background.jpg" class="background" data-background>
-      <img src="imgs/background.jpg" class="background" data-background>
-      <img src="imgs/ground.jpg" class="ground" data-ground>
-      <img src="imgs/ground.jpg" class="ground" data-ground>
+      <img src="game/imgs/background.jpg" class="background" data-background>
+      <img src="game/imgs/background.jpg" class="background" data-background>
+      <img src="game/imgs/ground.jpg" class="ground" data-ground>
+      <img src="game/imgs/ground.jpg" class="ground" data-ground>
       <div class="dino" data-dino></div>
     </div>
   </div>

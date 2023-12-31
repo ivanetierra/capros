@@ -13,6 +13,8 @@ const scoreElem = document.querySelector("[data-score]")
 const startScreenElem = document.querySelector("[data-start-screen]")
 const winScreenElem = document.querySelector("[data-win-screen]")
 const infoBoxElem = document.querySelector("[data-info-box]")
+const winBox = document.getElementById('win-box');
+const backButton = document.getElementById('back-button');
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -37,7 +39,7 @@ function update(time) {
   updateBackground(delta, speedScale)
   updateGround(delta, speedScale)
   updateDino(delta, speedScale)
-  updateCactus(delta, speedScale)
+  updateCactus(delta, speedScale, score)
   updateSpeedScale(delta)
   updateScore(delta)
   if (checkLose()) return handleLose()
@@ -110,9 +112,16 @@ function handleWin() {
   setDinoWin()
   infoBoxElem.classList.add("hide")
   winScreenElem.classList.remove("hide")
+  setTimeout(() => {
+    winBox.classList.remove('hide');
+  }, 500); // 500ms delay
 
   //alert('You won the game!');
 }
+
+backButton.addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
 
 function setPixelToWorldScale() {
   let worldToPixelScale

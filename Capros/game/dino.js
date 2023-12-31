@@ -37,28 +37,28 @@ export function getDinoRect() {
 
 export function setDinoLose() {
   dinoElem.classList.remove('running');
-  dinoElem.style.backgroundImage = 'url(imgs/alien-dead.png)';
+  dinoElem.style.backgroundImage = 'url(game/imgs/alien-dead.png)';
   dinoElem.style.backgroundSize = '100%';
     dinoElem.style.width = '8.4%';
 }
 
 export function setDinoWin() {
   dinoElem.classList.remove('running');
-  dinoElem.style.backgroundImage = 'url(imgs/alien-jump.png)';
+  dinoElem.style.backgroundImage = 'url(game/imgs/alien-jump.png)';
   dinoElem.style.backgroundSize = '100%';
     dinoElem.style.width = '8.4%';
 }
 
 function handleRun(delta, speedScale) {
   if (isJumping) {
-    dinoElem.style.backgroundImage = 'url(imgs/alien-jump.png)';
+    dinoElem.style.backgroundImage = 'url(game/imgs/alien-jump.png)';
     dinoElem.style.backgroundSize = '100%';
     dinoElem.style.width = '8.4%';
     dinoElem.classList.remove('running');
     return;
   }
 
-  dinoElem.style.backgroundImage = 'url(imgs/css_sprites.png)';
+  dinoElem.style.backgroundImage = 'url(game/imgs/css_sprites.png)';
   dinoElem.style.backgroundSize = '200%'; 
   dinoElem.style.width = '7.5%';
   dinoElem.classList.add('running');
