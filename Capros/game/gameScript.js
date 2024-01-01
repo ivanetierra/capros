@@ -97,7 +97,7 @@ function updateScore(delta) {
   infoBoxElem.textContent = `Meta en: ${Math.floor(score)}m`
 
   if (score === 0) {
-    
+    startSound.pause();
     handleWin();
   }
 }
