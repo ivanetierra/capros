@@ -15,6 +15,10 @@ const infoBoxElem = document.querySelector("[data-info-box]")
 const winBox = document.getElementById('win-box');
 const backButton = document.getElementById('go-back');
 
+const loseSound = new Audio('game/sounds/lose.mp3')
+const winSound = new Audio('game/sounds/win.mp3');
+const startSound = new Audio('game/sounds/bcn8bit.mp3');
+
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
 document.addEventListener("keydown", handleStart, { once: true })
@@ -52,7 +56,6 @@ function update(time) {
   updateSpeedScale(delta)
   updateScore(delta)
 
-  const loseSound = new Audio('game/sounds/lose.mp3')
   if (checkLose()) {
     loseSound.play();
     return handleLose()
@@ -84,8 +87,7 @@ function updateSpeedScale(delta) {
   speedScale += delta * SPEED_SCALE_INCREASE
 }
 
-const winSound = new Audio('game/sounds/win.mp3');
-const startSound = new Audio('game/sounds/bcn8bit.mp3');
+
 
 function updateScore(delta) {
   score -= delta * 0.01
@@ -104,6 +106,8 @@ function handleStart(event) {
   }
   gameRunning = true;
   startSound.currentTime = 0;
+  startSound.loop = true;
+  startSound.volume = 0.7;
   startSound.play();
 
   lastTime = null
