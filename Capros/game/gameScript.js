@@ -85,6 +85,7 @@ function updateSpeedScale(delta) {
 }
 
 const winSound = new Audio('game/sounds/win.mp3');
+const startSound = new Audio('game/sounds/bcn8bit.mp3');
 
 function updateScore(delta) {
   score -= delta * 0.01
@@ -102,6 +103,8 @@ function handleStart(event) {
     event.preventDefault();
   }
   gameRunning = true;
+  startSound.currentTime = 0;
+  startSound.play();
 
   lastTime = null
   speedScale = 1
@@ -116,6 +119,7 @@ function handleStart(event) {
 }
 
 function handleLose() {
+  startSound.pause();
   setDinoLose()
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
