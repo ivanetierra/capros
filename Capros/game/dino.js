@@ -78,9 +78,14 @@ function handleJump(delta) {
   yVelocity -= GRAVITY * delta
 }
 
+const jumpSound = new Audio('game/sounds/jump.mp3');
 function onJump(e) {
+  if (e.code === 'Space') {
+    e.preventDefault();
+  }
   if (e.type !== "click" && e.code !== "Space" || isJumping) return
-
+  jumpSound.currentTime = 0;
+  jumpSound.play();
   yVelocity = JUMP_SPEED
   isJumping = true
 }

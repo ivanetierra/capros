@@ -51,7 +51,12 @@ function update(time) {
   updateCactus(delta, speedScale, score)
   updateSpeedScale(delta)
   updateScore(delta)
-  if (checkLose()) return handleLose()
+
+  const loseSound = new Audio('game/sounds/lose.mp3')
+  if (checkLose()) {
+    loseSound.play();
+    return handleLose()
+  }
 
   lastTime = time
   window.requestAnimationFrame(update)
@@ -79,6 +84,7 @@ function updateSpeedScale(delta) {
   speedScale += delta * SPEED_SCALE_INCREASE
 }
 
+const winSound = new Audio('game/sounds/win.mp3');
 
 function updateScore(delta) {
   score -= delta * 0.01
@@ -86,12 +92,15 @@ function updateScore(delta) {
   infoBoxElem.textContent = `Meta en: ${Math.floor(score)}m`
 
   if (score === 0) {
-    // the player has won the game
+    
     handleWin();
   }
 }
 
-function handleStart() {
+function handleStart(event) {
+  if (event.code === 'Space') {
+    event.preventDefault();
+  }
   gameRunning = true;
 
   lastTime = null
@@ -117,6 +126,7 @@ function handleLose() {
 }
 
 function handleWin() {
+  winSound.play();
   gameRunning = false;
   setDinoWin()
   infoBoxElem.classList.add("hide")
