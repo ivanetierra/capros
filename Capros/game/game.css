@@ -124,6 +124,7 @@ body {
   background-image: url('imgs/alien-jump.png');
   background-position: 0 0;
   background-size: 100%;
+  filter: drop-shadow(0 0 0.2vmin black)
 }
 
 
