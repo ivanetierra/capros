@@ -32,10 +32,12 @@ let gameRunning = false;
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     gameRunning = false;
+    startSound.pause();
   } else {
     gameRunning = true;
     lastTime = null
     window.requestAnimationFrame(update);
+    startSound.play();
   }
 });
 
@@ -134,6 +136,7 @@ function handleLose() {
 }
 
 function handleWin() {
+  startSound.pause();
   winSound.play();
   gameRunning = false;
   setDinoWin()
