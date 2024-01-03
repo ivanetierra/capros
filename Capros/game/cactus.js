@@ -6,7 +6,7 @@ import {
 
 
 const SPEED = 0.04
-const CACTUS_INTERVAL_MIN = 700
+const CACTUS_INTERVAL_MIN = 800
 const CACTUS_INTERVAL_MAX = 2000
 const worldElem = document.querySelector("[data-world]")
 
@@ -36,7 +36,7 @@ export function updateCactus(delta, speedScale, score) {
   }
 
   if (nextCactusTime <= 0 && score>35) {
-    const randomNumber = randomNumberBetween(1,6);
+    const randomNumber = randomNumberBetween(1,10);
     if(randomNumber == 1){
       createTaxi();
     } else if(randomNumber == 2){
@@ -47,6 +47,14 @@ export function updateCactus(delta, speedScale, score) {
       createPidgeon();
     } else if(randomNumber == 5){
       createCactus();
+    } else if(randomNumber == 6){
+      createUmbrella();
+    } else if(randomNumber == 7){
+      createDrunk();
+    } else if(randomNumber == 8){
+      createTourist();
+    } else if(randomNumber == 9){
+      createTourist2();
     } else {
       createSagrada();
     }
@@ -117,6 +125,42 @@ function createPrimavera() {
   primavera.dataset.cactus = true;
   primavera.src = "game/imgs/primavera.gif";
   primavera.classList.add("primavera");
+  setCustomProperty(primavera, "--left", 100);
+  worldElem.append(primavera);
+}
+
+function createUmbrella() {
+  const primavera = document.createElement("img");
+  primavera.dataset.cactus = true;
+  primavera.src = "game/imgs/umbrella.png";
+  primavera.classList.add("umbrella");
+  setCustomProperty(primavera, "--left", 100);
+  worldElem.append(primavera);
+}
+
+function createDrunk() {
+  const primavera = document.createElement("img");
+  primavera.dataset.cactus = true;
+  primavera.src = "game/imgs/drunk.png";
+  primavera.classList.add("drunk");
+  setCustomProperty(primavera, "--left", 100);
+  worldElem.append(primavera);
+}
+
+function createTourist() {
+  const primavera = document.createElement("img");
+  primavera.dataset.cactus = true;
+  primavera.src = "game/imgs/tourist.png";
+  primavera.classList.add("drunk");
+  setCustomProperty(primavera, "--left", 100);
+  worldElem.append(primavera);
+}
+
+function createTourist2() {
+  const primavera = document.createElement("img");
+  primavera.dataset.cactus = true;
+  primavera.src = "game/imgs/tourist2.png";
+  primavera.classList.add("drunk");
   setCustomProperty(primavera, "--left", 100);
   worldElem.append(primavera);
 }

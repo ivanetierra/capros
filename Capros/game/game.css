@@ -48,6 +48,7 @@ body {
   height: 100%;
   background-size: cover;
   -webkit-background-size: cover;
+  background-attachment: scroll;
   z-index: -1;
 
   --left: 0;
@@ -172,7 +173,7 @@ body {
 .pidgeon {
   position: absolute;
   left: calc(var(--left) * 1%);
-  height: 18%;
+  height: 16%;
   bottom: 0;
   margin-bottom: 1.3%;
 }
@@ -180,7 +181,23 @@ body {
 .taxi {
   position: absolute;
   left: calc(var(--left) * 1%);
+  height: 17%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+}
+
+.umbrella {
+  position: absolute;
+  left: calc(var(--left) * 1%);
   height: 20%;
+  bottom: 0;
+  margin-bottom: 1.3%;
+}
+
+.drunk {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 25%;
   bottom: 0;
   margin-bottom: 1.3%;
 }
