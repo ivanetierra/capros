@@ -219,3 +219,12 @@ button {
   transform: translateY(-50%) rotate(180deg);
 }
 /*End Arrow*/
+
+.instructions {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive; 
+  color: #ffffff; 
+  margin-top: 20px; /* Adjust as needed to position below the "Juego" link */
+  line-height: 1.3;
+
+}
