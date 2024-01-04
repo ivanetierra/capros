@@ -26,10 +26,28 @@ body {
   width: 100%;
 }
 
-img {
-  transform: scale(0.7);
 
+.ipod-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70vw; 
+  height: 70vh; 
+  max-width: 392px;
+  max-height: 617px;
+}
+
+
+
+img {
+  transform: scale(1);
   max-width: 100%;
   height: auto;
 }
 
+.audio-player {
+  position: absolute;
+  margin: 100% 40% 0% 40%;
+  width: 70%;
+}

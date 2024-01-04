@@ -17,7 +17,7 @@ const backButton = document.getElementById('go-back');
 
 const loseSound = new Audio('game/sounds/lose.mp3')
 const winSound = new Audio('game/sounds/win.mp3');
-const startSound = new Audio('game/sounds/bcn8bit.mp3');
+const startSound = new Audio('game/sounds/bcn8bit-long.mp3');
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -108,7 +108,7 @@ function handleStart(event) {
   }
   gameRunning = true;
   startSound.currentTime = 0;
-  startSound.loop = true;
+  //startSound.loop = true;
   startSound.volume = 0.7;
   startSound.play();
 
