@@ -19,18 +19,24 @@
     ></script>
 
     <title>CAPROS</title>
-    <link rel="icon" type="image/png" href="./assets/img/fav.png" />
+    <link rel="icon" type="image/png" href="./assets/img/loading/capros-logo.png" />
   </head>
 
   <body>
     <main class="desktop-area">
       <div class="desktop-area-content">
         <div class="ipod-container">
-          <img src="assets/img/ipod.png" alt="audio player" />
-          <audio controls class="audio-player">
-            <source src="assets/music/Barcelona.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
+          <img src="assets/img/ipod.png" alt="ipod" />
+          <div class="audio-player">
+            <audio id="audio" class="audio">
+              <source src="assets/music/Barcelona.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+            <button id="playPauseButton" onclick="togglePlayPause()">Play</button>
+            <div id="progressContainer">
+              <div id="progressBar"></div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -154,7 +160,7 @@
 
     <script src="js/lib/drag.js"></script>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/server.js"></script>
 
     <!-- End Scripts -->

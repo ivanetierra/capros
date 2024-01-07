@@ -47,12 +47,24 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
-  -webkit-background-size: cover;
-  background-attachment: scroll;
   z-index: -1;
 
   --left: 0;
   left: calc(var(--left) * 1%)
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('game/imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  transform: scale(1.1);
 }
 
 .start-screen {

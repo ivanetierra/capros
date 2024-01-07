@@ -34,20 +34,26 @@ body {
   position: relative;
   width: 70vw; 
   height: 70vh; 
-  max-width: 392px;
-  max-height: 617px;
 }
 
-
-
-img {
-  transform: scale(1);
+.ipod-container img {
+  transform: scale(0.8);
   max-width: 100%;
   height: auto;
 }
-
-.audio-player {
+.ipod-container .audio-player{
+  border: 1px solid black;
+  border-color: black;
   position: absolute;
-  margin: 100% 40% 0% 40%;
-  width: 70%;
+  bottom: 10%; 
+  left: 30%; 
+  width: 40%; 
+  height: 20%;
 }
+
+.ipod-container .audio-player #playPauseButton{
+  width: 50%;
+  height: 50%;
+}
+
+
