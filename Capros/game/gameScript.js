@@ -51,7 +51,7 @@ function update(time) {
   }
   const delta = time - lastTime
 
-  
+  updateBackground(delta, speedScale)
   updateGround(delta, speedScale)
   updateDino(delta, speedScale)
   updateCactus(delta, speedScale, score)
@@ -116,6 +116,7 @@ function handleStart(event) {
   lastTime = null
   speedScale = 1
   score = 500
+  setupBackground()
   setupGround()
   setupDino()
   setupCactus()
