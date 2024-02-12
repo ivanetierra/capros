@@ -22,3 +22,10 @@ audio.addEventListener('ended', function() {
 });
 
 
+function goBack() {
+ window.location.href = 'index.html';
+}
+
+function clickPreSave(){
+  window.open('https://distrokid.com/hyperfollow/capros/barcelona', '_blank');
+}

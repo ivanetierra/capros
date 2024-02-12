@@ -10,12 +10,13 @@ body {
 .desktop-area {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   height: 100vh;
   background-image: url("../assets/img/background-image-px.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
+  position: relative;
 }
 
 .desktop-area .desktop-area-content {
@@ -61,10 +62,70 @@ body {
   }
 }
 
-
-.ipod-container .audio-player #playPauseButton:active {
+.ipod-container #playPauseButton:active {
   background-color: #ddd; 
   transform: translateX(-50%) scale(0.95);
 }
 
+.ipod-container #playPauseButton:hover {
+  cursor: pointer;
+}
 
+@keyframes shake {
+  0% { transform: scale(0.4) translate(1px, 1px) rotate(0deg); }
+  3% { transform: scale(0.4) translate(-1px, -2px) rotate(-1deg); }
+  6% { transform: scale(0.4) translate(-3px, 0px) rotate(1deg); }
+  9% { transform: scale(0.4) translate(3px, 2px) rotate(0deg); }
+  12% { transform: scale(0.4) translate(1px, -1px) rotate(1deg); }
+  15% { transform: scale(0.4) translate(-1px, 2px) rotate(-1deg); }
+  18% { transform: scale(0.4) translate(-3px, 1px) rotate(0deg); }
+  21% { transform: scale(0.4) translate(3px, 1px) rotate(-1deg); }
+  24% { transform: scale(0.4) translate(-1px, -1px) rotate(1deg); }
+  27% { transform: scale(0.4) translate(1px, 2px) rotate(0deg); }
+  30% { transform: scale(0.4) translate(1px, -2px) rotate(-1deg); }
+  100% { transform: scale(0.4); }
+}
+
+.presave{
+  transform: scale(0.4);
+  animation: shake 3s cubic-bezier(.36,.07,.19,.97) infinite;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.presave:hover {
+cursor: pointer;
+}
+
+.button-container {
+  position: absolute; 
+  bottom: 3%; 
+  left: 3%; 
+  margin-right: 0; 
+  margin-bottom: 0; 
+}
+
+.go-back{
+  padding: 0.5%;
+  width: 15vmin; 
+  font-family: 'VT323', monospace;
+  text-align: center;
+  font-size: 6vmin; 
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
+}
+
+@media (min-width: 426px) {
+  .go-back {
+    font-size: 4vmin;
+  }
+}
+
+.go-back:hover {
+  background-color: black; 
+  color: white; 
+  cursor: pointer;
+}

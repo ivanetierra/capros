@@ -15,6 +15,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+  />
+
     
     <!-- Fontawesome -->
     <script
@@ -28,7 +33,9 @@
 
   <body>
     <main class="desktop-area">
+
       <div class="desktop-area-content">
+      
         <div class="ipod-container">
           <img src="assets/img/ipod.png" alt="ipod" />
           <audio id="audio" class="audio">
@@ -37,7 +44,19 @@
           </audio>
           <button id="playPauseButton" class="fa-solid fa-play" onclick="togglePlayPause()"></button>
         </div>
+
+        <div class="presave">
+          <img src="assets/img/presave.png" alt="Pre-Save" onclick="clickPreSave()">
+
+        </div>
+
+        <div class="button-container">
+          <button class="go-back" id="go-back" onclick="goBack()">Atrás</button>
+        </div>
+
       </div>
+
+
     </main>
     
 
