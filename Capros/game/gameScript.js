@@ -103,6 +103,7 @@ function updateScore(delta) {
 }
 
 function handleStart(event) {
+  
   if (event.code === 'Space') {
     event.preventDefault();
   }
@@ -121,6 +122,7 @@ function handleStart(event) {
   setupCactus()
   startScreenElem.classList.add("hide")
   infoBoxElem.classList.remove("hide")
+  winBox.classList.remove('show'); 
   window.requestAnimationFrame(update)
 }
 
@@ -144,10 +146,8 @@ function handleWin() {
   winScreenElem.classList.remove("hide")
   setTimeout(() => {
     
-    winBox.classList.add('show'); // Add the 'show' class
+    winBox.classList.add('show'); 
   }, 500); // 500ms delay
-
-  //alert('You won the game!');
 }
 
 backButton.addEventListener('click', () => {

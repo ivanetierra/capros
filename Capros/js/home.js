@@ -6,21 +6,19 @@ var progressBar = document.getElementById('progressBar');
 function togglePlayPause() {
   if (audio.paused) {
     audio.play();
-    playPauseButton.textContent = 'Pause';
+    playPauseButton.classList.remove('fa-play');
+    playPauseButton.classList.add('fa-pause');
   } else {
     audio.pause();
-    playPauseButton.textContent = 'Play';
+    playPauseButton.classList.remove('fa-pause');
+    playPauseButton.classList.add('fa-play');
   }
 }
 
-audio.addEventListener('timeupdate', updateProgressBar);
-
-function updateProgressBar() {
-  var progress = (audio.currentTime / audio.duration) * 100;
-  progressBar.style.width = progress + '%';
-}
-
 audio.addEventListener('ended', function() {
-    audio.currentTime = 0;
-    playPauseButton.textContent = 'Play';
-  });
+  audio.currentTime = 0;
+  playPauseButton.classList.remove('fa-pause');
+  playPauseButton.classList.add('fa-play');
+});
+
+

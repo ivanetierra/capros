@@ -29,31 +29,42 @@ body {
 
 .ipod-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  width: 70vw; 
-  height: 70vh; 
 }
 
 .ipod-container img {
-  transform: scale(0.8);
-  max-width: 100%;
+  max-width: 180px;
   height: auto;
 }
-.ipod-container .audio-player{
-  border: 1px solid black;
-  border-color: black;
+
+.ipod-container #playPauseButton {
   position: absolute;
-  bottom: 10%; 
-  left: 30%; 
-  width: 40%; 
-  height: 20%;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%;
+  border: 4px solid black;
+  font-size: 20px;
 }
 
-.ipod-container .audio-player #playPauseButton{
-  width: 50%;
-  height: 50%;
+@media (min-width: 426px) { /*for bigger screens*/
+  .ipod-container img {
+    max-width: 220px;
+  }
+
+  .ipod-container #playPauseButton{
+    bottom: 30px;
+    width: 60px; 
+    height: 60px; 
+  }
+}
+
+
+.ipod-container .audio-player #playPauseButton:active {
+  background-color: #ddd; 
+  transform: translateX(-50%) scale(0.95);
 }
 
 

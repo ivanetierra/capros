@@ -295,5 +295,6 @@ body {
 .go-back:hover {
   background-color: black; 
   color: white; 
+  cursor: pointer;
 }
 

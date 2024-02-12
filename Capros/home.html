@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     
     <!-- Fontawesome -->
@@ -27,16 +31,11 @@
       <div class="desktop-area-content">
         <div class="ipod-container">
           <img src="assets/img/ipod.png" alt="ipod" />
-          <div class="audio-player">
-            <audio id="audio" class="audio">
-              <source src="assets/music/Barcelona.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-            <button id="playPauseButton" onclick="togglePlayPause()">Play</button>
-            <div id="progressContainer">
-              <div id="progressBar"></div>
-            </div>
-          </div>
+          <audio id="audio" class="audio">
+            <source src="assets/music/Barcelona.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <button id="playPauseButton" class="fa-solid fa-play" onclick="togglePlayPause()"></button>
         </div>
       </div>
     </main>
